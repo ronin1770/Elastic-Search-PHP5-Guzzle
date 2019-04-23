@@ -51,7 +51,7 @@ Following methods have been integrated:
 
 => Class constructor - tests if the connection can be established
 
-   public function __construct() {
+      public function __construct() {
             global $USERNAME, $USERPASSWORD, $URL;
 
             $this->m_client = new \GuzzleHttp\Client( [
@@ -76,7 +76,7 @@ Following methods have been integrated:
          
 => Create Index - as the name implies creates the index using the supplied name
 
-   public function create_index($index) {
+      public function create_index($index) {
             global $USERNAME, $USERPASSWORD, $URL;
             $retval = "";
             $url = $URL . "/$index?pretty";
@@ -98,7 +98,7 @@ Following methods have been integrated:
          
 => List Indices - displays the list of existing indices on the server
 
-   public function list_indices() {
+      public function list_indices() {
             global $USERNAME, $USERPASSWORD, $URL;
             $retval = "";
             $url = $URL . "/_cat/indices";
@@ -120,7 +120,7 @@ Following methods have been integrated:
          
 => Push Data - provides a method for pushing data into the selected index
 
-   public function push_data($index, $json_string) {
+      public function push_data($index, $json_string) {
             global $USERNAME, $USERPASSWORD, $URL;
             $retval = "";
             $url = $URL . "/$index/_doc";
@@ -145,7 +145,7 @@ Following methods have been integrated:
          
 => Import Sample Data - provides a method for importing data from the sample file
 
-   public function import_sample_data($index) {
+      public function import_sample_data($index) {
             //Data is stored in the attached sample.csv file
             $row = 0;
 
@@ -174,7 +174,7 @@ Following methods have been integrated:
          
 => Search Range - provides a method of searching for the given range of values
 
-   public function search_range($index, $search_term, $lessthan, $greaterthan) {
+      public function search_range($index, $search_term, $lessthan, $greaterthan) {
             global $USERNAME, $USERPASSWORD, $URL;
             $retval = "";
             $url = $URL . "/$index/_doc/_search/?pretty=true";
@@ -199,7 +199,7 @@ Following methods have been integrated:
          
 => Search Data - provides a method for searching the given term with the provided value
 
-   public function search_data($index, $search_term, $search_value) {
+      public function search_data($index, $search_term, $search_value) {
             global $USERNAME, $USERPASSWORD, $URL;
             $retval = "";
             $url = $URL . "/$index/_doc/_search/?pretty=true";
@@ -223,7 +223,7 @@ Following methods have been integrated:
          
 => Get Data Item - provides a method to get the value of data using provided id
 
-   public function get_data_item($index, $id) {
+      public function get_data_item($index, $id) {
             global $USERNAME, $USERPASSWORD, $URL;
             $retval = "";
             $url = $URL . "/$index/_doc/$id";
@@ -242,3 +242,4 @@ Following methods have been integrated:
                echo "Get Data Item Method failed\n" . $response->getStatusCode() . "\n" . $response->getReasonPhrase(); 
             }
          }
+      
