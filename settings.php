@@ -1,0 +1,5 @@
+<?php
+	$USERNAME 		= "";
+	$USERPASSWORD 	= "";
+	$URL 			= "";
+?>
